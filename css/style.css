@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: whitesmoke;
+}
+.app{
+    background-color: aquamarine;
+    width: 90%;
+    max-width: 600px;
+    margin: 150px auto 0;
+    padding: 30px auto 0;
+    border-radius: 10px;
+}
+
