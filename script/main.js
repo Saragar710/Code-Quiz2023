@@ -89,19 +89,17 @@ function gernerateQuiz(questions, quizContainer, resultsContainer, submitButton)
     function showQuestions(questions, quizContainer) {
         var output=[];
         var answers;
-        showQuestions(myQuestions,quizContainer);
-        function myQuestions (){
-           getElementById[`What is Stanley Hudsons favorite day?`]
+        // showQuestions(myQuestions,quizContainer);
+        // function myQuestions (){
+        //    [`What is Stanley Hudsons favorite day?`]
         
-        if (i = 'c', correctAnswer = true);{
-
-        } else {
-            answers = "a, b, = false"; 
-          }
-
 
         for(var i=0; i<questions.length; i++){
-            answers =[];
+            answers =[
+                a= false,
+                b= false,
+                c= true
+            ];
         }
 
 
@@ -120,4 +118,10 @@ function gernerateQuiz(questions, quizContainer, resultsContainer, submitButton)
 
         showResults(questions, quizContainer, resultsContainer);
     }
-}}
+}
+
+    setInterval(myTimer, 2000);
+
+    function myTimer() {
+
+    }
