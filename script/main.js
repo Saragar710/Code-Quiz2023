@@ -8,7 +8,7 @@ var myQuestions =[
             c: 'Pretzel Day'
         },
 
-        correctAnswer: 'c'
+        correctAnswer: 'Pretzel Day'
     
     },
     {
@@ -20,7 +20,7 @@ var myQuestions =[
             c: 'Mike Dancer, MD Dance Studio'
         },
 
-        correctAnswer: 'b'
+        correctAnswer: 'Bob Vance, Vance Refridgeration'
     },
     {
         question: "Where did Micheal and Jan go for Christmas Vacation?",
@@ -31,7 +31,7 @@ var myQuestions =[
             c: 'Jamaica'
         },
 
-        correctAnswer: 'c'
+        correctAnswer: 'Jamaica'
     },
     {
         question: "Finish the sentence: Thats what...",
@@ -42,86 +42,111 @@ var myQuestions =[
             c: 'happens'
         }, 
 
-        correctAnswer: 'a'
+        correctAnswer: 'she said'
     }
 ];
+var timerEl =document.querySelector('#timer');
+var secondsLeft = 60
+function setTime(){
+    //sets interval in variable
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timerEl.textContent = secondsLeft + "seconds left till quiz is over.";
+        if(secondsLeft ===0){
+        //stops the timer
+        clearInterval(timerInterval);
 
-//     question: "What is Stanly Hudsons favorite day?",
-//     answers:[
-//         {text: "Bagel Friday", correct: false},
-//         {text: "Taco Tuesday", correct: false},
-//         {text: "Pretzel Day", correct: true},
-//     ]
-// },
-// {
-//     question: "What is Phyliis's husbands name and what compnay does he work for?",
-//     answer: [
-//         {text: 'Lance Bass, Bass ProShop', correct: false},
-//         {text: 'Bob Vance, Vance Refridgeration', correct: true},
-//         {text: 'Mike Dance, MD Dance Studio', correct: false},
-//     ]
-// },
-// {
-//     question: "Where did Micheal and Jan go for Christmas Vacation?",
-//     answer:[
-//         {text: 'Bahamas', correct: false},
-//         {text: 'Hawaii', correct: false},
-//         {text: 'Jamaica', correct: true},
-//     ]
-// },
-// {
-//     question: "Finish the sentence: That's what...",
-//     answer: [
-//         {text: 'she said', correct: true},
-//         {text: 'Im talking about', correct: false},
-//         {text: 'happens', correct: false},
-//     ]
-// }
-
-//];
-
-
-
+    }
+  }, 1000);
+    
+}
+// countdown ();
+setTime()
+var qi= -1
+//decrement by 5 seconds for every wrong answer but how
+function checkAnswer(e) {
+    console.log(e.target)
+}
+var score = 0
+document.querySelector("#btn1").addEventListener("click", checkAnswer)
+document.querySelector("#btn2").addEventListener("click", checkAnswer)
+document.querySelector("#btn3").addEventListener("click", checkAnswer)
+document.querySelector("#btn4").addEventListener("click", checkAnswer)
+function nextQuestion () {
+   console.log(qi)
+   qi++
+   if(qi < 4){
+    document.querySelector("#question").textContent = myQuestions[qi].question
+    document.querySelector("#btn1").textContent = myQuestions[qi].answers.a
+    document.querySelector("#btn2").textContent = myQuestions[qi].answers.b
+    document.querySelector("#btn3").textContent = myQuestions[qi].answers.c
+    }
+    else{
+        document.querySelector("#question").style="display:none"
+        document.querySelector("#btn1").style="display:none"
+        document.querySelector("#btn2").style="display:none"
+        document.querySelector("#btn3").style="display:none"
+        document.querySelector("#timer").style="display:none"
+        showResults()
+    }
+}
+function showResults(){
+    score = secondsLeft
+    var initials = prompt("enter your initials")
+    var li = document.createElement("li")
+    li.textContent = initials + ": " + score
+    document.querySelector("#scoreList").appendChild(li)
+}
+nextQuestion()
+document.querySelector("#btn1").addEventListener("click", nextQuestion)
+document.querySelector("#btn2").addEventListener("click", nextQuestion)
+document.querySelector("#btn3").addEventListener("click", nextQuestion)
 function gernerateQuiz(questions, quizContainer, resultsContainer, submitButton) {
 
 
 
-    function showQuestions(questions, quizContainer) {
-        var output=[];
-        var answers;
-        // showQuestions(myQuestions,quizContainer);
-        // function myQuestions (){
-        //    [`What is Stanley Hudsons favorite day?`]
+    // function showQuestions(questions, quizContainer) {
+    //     var output=[];
+    //     var answers;
+    //     // showQuestions(myQuestions,quizContainer);
+    //     // function myQuestions (){
+    //     //    [`What is Stanley Hudsons favorite day?`]
         
 
-        for(var i=0; i<questions.length; i++){
-            answers =[
-                a= false,
-                b= false,
-                c= true
-            ];
-        }
+    //     for(var i=0; i<questions.length; i++){
+    //         answers =[
+    //             a= false,
+    //             b= false,
+    //             c= true
+    //         ];
+    //     }
 
 
-    }
+    // }
 
-    function showResults(questions, quizContainer,resultsContainer) {
-        //code goes here
-
-    }
-
+    // function showResults(questions, quizContainer,resultsContainer) {
+    //     //code goes here
    
 
-
+    // }
     //when user clickes submit, show results
-    submitButton.onclick = function(){
+//     submitButton.onclick = function(){
 
-        showResults(questions, quizContainer, resultsContainer);
+//         showResults(questions, quizContainer, resultsContainer);
+//     }
+// }
+
+//     window.setInterval(myTimer,5000)
+
+//     function myTimer() {
+
     }
-}
+    // clearEl.addEventListener('click', function (event) {
+    //     event.preventDefault();
+    //     textAreaEL.value = '';
 
-    setInterval(myTimer, 2000);
+    //     for (var i = 0; i < Element.length; i ++){
+    //         elements[i].textContent = '';
+    //     }
 
-    function myTimer() {
-
-    }
+    // })
