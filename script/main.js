@@ -5,7 +5,8 @@ var myQuestions =[
         answers: {
             a: 'Bagel Fridays',
             b: 'Taco Tuesday',
-            c: 'Pretzel Day'
+            c: 'Pretzel Day',
+            d: 'Ice cream Thursdays',
         },
 
         correctAnswer: 'Pretzel Day'
@@ -17,7 +18,8 @@ var myQuestions =[
         answers: {
             a: 'Lance Bass, Bass ProShop',
             b: 'Bob Vance, Vance Refridgeration',
-            c: 'Mike Dancer, MD Dance Studio'
+            c: 'Mike Dancer, MD Dance Studio',
+            d: 'Ryan Howard, Howard Johnsons',
         },
 
         correctAnswer: 'Bob Vance, Vance Refridgeration'
@@ -28,7 +30,8 @@ var myQuestions =[
         answers: {
             a: 'Bahamas',
             b: 'Hawaii',
-            c: 'Jamaica'
+            c: 'Jamaica',
+            d: 'Poconos'
         },
 
         correctAnswer: 'Jamaica'
@@ -39,12 +42,15 @@ var myQuestions =[
         answers: {
             a: 'she said',
             b: 'Im talking about',
-            c: 'happens'
+            c: 'happens',
+            d: 'Friends are for'
         }, 
 
         correctAnswer: 'she said'
     }
 ];
+//selected questions ^^
+
 var timerEl =document.querySelector('#timer');
 var secondsLeft = 60
 function setTime(){
@@ -68,11 +74,11 @@ function checkAnswer(e) {
     console.log(e.target)
 }
 var score = 0
-document.querySelector("#btn1").addEventListener("click", checkAnswer)
-document.querySelector("#btn2").addEventListener("click", checkAnswer)
+document.querySelector("#btn1").addEventListener("click", checkAnswer)//adding eventListener so you can see what was clicked
+document.querySelector("#btn2").addEventListener("click", checkAnswer)//altho what is being clicked does not match the right answer
 document.querySelector("#btn3").addEventListener("click", checkAnswer)
 document.querySelector("#btn4").addEventListener("click", checkAnswer)
-function nextQuestion () {
+function nextQuestion () { //so the next question will appear
    console.log(qi)
    qi++
    if(qi < 4){
@@ -80,12 +86,14 @@ function nextQuestion () {
     document.querySelector("#btn1").textContent = myQuestions[qi].answers.a
     document.querySelector("#btn2").textContent = myQuestions[qi].answers.b
     document.querySelector("#btn3").textContent = myQuestions[qi].answers.c
+    document.querySelector("#btn4").textContent = myQuestions[qi].answers.d
     }
     else{
         document.querySelector("#question").style="display:none"
         document.querySelector("#btn1").style="display:none"
         document.querySelector("#btn2").style="display:none"
         document.querySelector("#btn3").style="display:none"
+        document.querySelector("#btn4").style="display:none"
         document.querySelector("#timer").style="display:none"
         showResults()
     }
@@ -104,7 +112,7 @@ document.querySelector("#btn3").addEventListener("click", nextQuestion)
 function gernerateQuiz(questions, quizContainer, resultsContainer, submitButton) {
 
 
-
+}
     // function showQuestions(questions, quizContainer) {
     //     var output=[];
     //     var answers;
@@ -140,7 +148,7 @@ function gernerateQuiz(questions, quizContainer, resultsContainer, submitButton)
 
 //     function myTimer() {
 
-    }
+    
     // clearEl.addEventListener('click', function (event) {
     //     event.preventDefault();
     //     textAreaEL.value = '';

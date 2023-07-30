@@ -5,19 +5,11 @@
     box-sizing: border-box;
 }
 body{
-    background: rgb(158, 122, 167);
+    background: rgb(98, 22, 116);
     font-size: 25px;
 
 }
 
-/* /* .app{
-    background-color: rgb(29, 18, 189);
-    width: 90%;
-    max-width: 600px;
-    margin: 150px auto 0;
-    padding: 30px auto 0;
-    border-radius: 10px;
-}  */
  h1{
     background-color: white;
     width: 100%;
@@ -25,8 +17,13 @@ body{
     padding: 20px auto 0;
     border-radius: 10px;
 
-    
+}
+h2{
+    color:azure;
+}
 
+h3{
+    color: rgb(19, 19, 134);
 }
 .question{
     font-weight: 600;
@@ -54,11 +51,6 @@ body{
     margin-bottom: 25px;
     
 }
-/* #submit :hover{
+#submit :hover{
     background-color: blue;
-} */
-/* #getResults {
-    border-radius: 5px;
-    padding: 20px;
-    margin: 100px auto 0;
-} */
+} 
